@@ -39,7 +39,7 @@ async function start() {
     result.body.forEach(data => {
       fileContent += `${moment(new Date(data.created_at)).format('YYYY-MM-DD hh:mm:ss')}：${data.text}`
       if(data.photo) {
-        fileContent += `![图片](${data.photo})`
+        fileContent += `![图片](${data.photo.largeurl})`
       }
 
       fileContent += '\n'
